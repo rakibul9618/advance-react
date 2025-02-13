@@ -1,5 +1,15 @@
-const BookInfo = () => {
-  return <div>BookInfo</div>;
-};
+export const BookInfo = ({ book }) => {
+  
+  const { name, price, title, pages } = book || {};
 
-export default BookInfo;
+  return book ? (
+    <>
+      <h3>{name}</h3>
+      <p>{price}</p>
+      <h3>Title: {title}</h3>
+      <p>Number of Pages: {pages}</p>
+    </>
+  ) : (
+    <h1>Loading</h1>
+  );
+};
